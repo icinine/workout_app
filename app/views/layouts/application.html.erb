@@ -25,9 +25,9 @@ data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">(current)</span>
       </li>
     </ul>
-    <ul class="bnav navbar-nav navbar-right">
-      <li><%= link_to "Sign up", new_user_registration_path %>
-      <li><%= link_to "Sign in", new_user_session_path %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
         <% if user_signed_in? %>
         <div class="navbar-right">
           <p class="navbar-text">
