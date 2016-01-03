@@ -1,5 +1,6 @@
 <div class="col-md-8 col-xs-12">
   <% unless @exercises.empty? %>
+  <h1> Listing Exercises </h1>
   
   <table class="table table-striped">
     <thead>
@@ -17,8 +18,8 @@
           <td><%= truncate(exercise.workout, length: 100) %></td>
           <td><%= exercise.workout_date %> </td>
           <td><%= link_to "Show", [current_user, exercise] %></td>
-          <td><%= link_to "Edit", [current_user, exercise] %></td>
-          <td><%= link_to "Destroy", [current_user, exercise], method: :delete, data: {confirm: "Are you sure?"} %></td>
+          <td><%= link_to "Edit", [:edit, current_user, exercise] %></td>
+          <td><%= link_to "Destroy", [current_user, exercise], method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
       <% end %>
     </tbody>
@@ -26,7 +27,7 @@
   <br>
   <% else %>
   <div class="alert alert-danger message-font text-centre" role="alert">
-    No Workouts Yet
+    No Workouts yet
   </div>
   <% end %>
   <%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-primary link" %>
